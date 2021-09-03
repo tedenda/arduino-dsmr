@@ -231,13 +231,13 @@ namespace dsmr
     /* Equipment identifier */
     DEFINE_FIELD(equipment_id, String, ObisId(0, 0, 96, 1, 1), StringField, 0, 96);
 
-    /* Meter Reading electricity delivered to client (Special for Lux) in 0,001 kWh */
+    /* Meter Reading electricity delivered to client (Special for LUX and SWE) in 0,001 kWh */
     DEFINE_FIELD(energy_delivered_lux, FixedValue, ObisId(1, 0, 1, 8, 0), FixedField, units::kWh, units::Wh);
     /* Meter Reading electricity delivered to client (Tariff 1) in 0,001 kWh */
     DEFINE_FIELD(energy_delivered_tariff1, FixedValue, ObisId(1, 0, 1, 8, 1), FixedField, units::kWh, units::Wh);
     /* Meter Reading electricity delivered to client (Tariff 2) in 0,001 kWh */
     DEFINE_FIELD(energy_delivered_tariff2, FixedValue, ObisId(1, 0, 1, 8, 2), FixedField, units::kWh, units::Wh);
-    /* Meter Reading electricity delivered by client (Special for Lux) in 0,001 kWh */
+    /* Meter Reading electricity delivered by client (Special for LUX and SWE) in 0,001 kWh */
     DEFINE_FIELD(energy_returned_lux, FixedValue, ObisId(1, 0, 2, 8, 0), FixedField, units::kWh, units::Wh);
     /* Meter Reading electricity delivered by client (Tariff 1) in 0,001 kWh */
     DEFINE_FIELD(energy_returned_tariff1, FixedValue, ObisId(1, 0, 2, 8, 1), FixedField, units::kWh, units::Wh);
@@ -336,7 +336,7 @@ namespace dsmr
     DEFINE_FIELD(power_returned_l3, FixedValue, ObisId(1, 0, 62, 7, 0), FixedField, units::kW, units::W);
 
     /*
- * LUX
+ * LUX and SWE
  */
     /* Instantaneous reactive power L1 (+Q) in W resolution */
     DEFINE_FIELD(reactive_power_delivered_l1, FixedValue, ObisId(1, 0, 23, 7, 0), FixedField, units::none, units::none);
@@ -346,7 +346,7 @@ namespace dsmr
     DEFINE_FIELD(reactive_power_delivered_l3, FixedValue, ObisId(1, 0, 63, 7, 0), FixedField, units::none, units::none);
 
     /*
- * LUX
+ * LUX and SWE
  */
     /* Instantaneous reactive power L1 (-Q) in W resolution */
     DEFINE_FIELD(reactive_power_returned_l1, FixedValue, ObisId(1, 0, 24, 7, 0), FixedField, units::none, units::none);
